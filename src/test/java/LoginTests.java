@@ -8,6 +8,7 @@ public class LoginTests {
     private FiltersTab filtersTab = new FiltersTab();
     private NotTls notTls = new NotTls();
     private LogInForm logInForm = new LogInForm();
+    private RiskProfileTab riskProfileTab= new RiskProfileTab();
 
 
     @BeforeSuite
@@ -37,8 +38,14 @@ public class LoginTests {
                 .backFilterCreate()
                 .createFilter()
                 .descriptionTable();
+    }
+
+    @Test
+        public void createRiskProfile() {
+        header.clickRiskProfile();
+        riskProfileTab.
 
     }
 
 
-}
+    }
