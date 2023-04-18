@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$x;
 public class FiltersTab {
 
     private final SelenideElement createButton = $x("//*[@class = 'action']"); //кнопка добавить
-    private final SelenideElement searchFilter = $x("//app-text-box/input"); //филтер в таблице
-    private final SelenideElement descriptionFilter = $x("//td/a[text()='FL_TEST_QA']/../preceding-sibling::td/app-icon"); //просмотр описания фильтра в таблице
+    private final SelenideElement searchFilter = $x("//app-text-box/input"); //фильтер в таблице
+    private final SelenideElement descriptionFilter = $x("//td/a[text()='FL_TEST_AQA']/../preceding-sibling::td/app-icon"); //просмотр описания фильтра в таблице
     private final SelenideElement putFilter = $x("//div/ul/li[text()='Редактировать']"); //вызов кнопки редактирования
     private final SelenideElement deleteFilter = $x("//div/ul/li[text()='Удалить']"); //вызов кнопки удаления фильтра
     private final SelenideElement deleteFilterYes = $x("//footer/button[@class='attention']"); //поп-ап удаления фильтра, кнопка ДА
@@ -21,6 +21,7 @@ public class FiltersTab {
     private final SelenideElement filterTest = $x("//button/span[text()='Тест']"); //Форма Добавления фильтра, кнопка тест
     private final SelenideElement filterTestField = $x("//div/label[text()='TEST_FIELD']//following-sibling::app-text-box/input"); //Форма проверки фильтра, поле ввода TestField
     private final SelenideElement createButtonPopup = $x("//*[@class='popup-action']"); //Форма Добавления фильтра, кнопка добавить
+    private final SelenideElement closePopApFilter = $x("//*[text()='close']"); //Закрыть поп-ап создания
     private final SelenideElement filterTestGo = $x("//footer/button[text() ='Проверить']"); //Форма проверки фильтра, кнопка проверить
     private final SelenideElement filterTestGoBack = $x("//button[@class='transparent']"); //Форма проверки фильтра, вернуться к форме создания
 
@@ -75,9 +76,15 @@ public class FiltersTab {
         return this;
     }
 
+    public FiltersTab closePopApFilter(){
+        closePopApFilter.click();
+        return this;
+    }
+
     public FiltersTab descriptionTable() {
         descriptionFilter.click();
         return this;
     }
+
 
 }

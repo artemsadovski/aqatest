@@ -37,15 +37,24 @@ public class LoginTests {
                 .checkFilterConditionTest()
                 .backFilterCreate()
                 .createFilter()
+                .closePopApFilter()
                 .descriptionTable();
     }
 
     @Test
         public void createRiskProfile() {
         header.clickRiskProfile();
-        riskProfileTab.
+        riskProfileTab
+                .addButtonProfile()
+                .addName()
+                .addAnchor()
+                .addAnchor()
+                .dropList()
+                .afWorkProcces()
+                .addDescription()
+                .addRiskProfile()
+                .closePopApRisk()
+                .lookDescrTable();
 
     }
-
-
     }
