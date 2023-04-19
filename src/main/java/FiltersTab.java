@@ -21,9 +21,12 @@ public class FiltersTab {
     private final SelenideElement filterTest = $x("//button/span[text()='Тест']"); //Форма Добавления фильтра, кнопка тест
     private final SelenideElement filterTestField = $x("//div/label[text()='TEST_FIELD']//following-sibling::app-text-box/input"); //Форма проверки фильтра, поле ввода TestField
     private final SelenideElement createButtonPopup = $x("//*[@class='popup-action']"); //Форма Добавления фильтра, кнопка добавить
-    private final SelenideElement closePopApFilter = $x("//*[text()='close']"); //Закрыть поп-ап создания
+    private final SelenideElement closePopApFilter = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //Закрыть поп-ап создания
     private final SelenideElement filterTestGo = $x("//footer/button[text() ='Проверить']"); //Форма проверки фильтра, кнопка проверить
     private final SelenideElement filterTestGoBack = $x("//button[@class='transparent']"); //Форма проверки фильтра, вернуться к форме создания
+    private final SelenideElement errorPopApDoc = $x("//div[@class='error']/following::div/app-icon[text()='close']"); //поп-ап ошибка такой элемент есть
+    private final SelenideElement cancelButton = $x("//button[@class='cancel']"); //отмена создания
+    private final SelenideElement cancelButtonAppove = $x("//footer/button[text()='Да']"); //подтверждение отмены
 
 
     public FiltersTab clickCreateButton() {
@@ -73,15 +76,26 @@ public class FiltersTab {
 
     public FiltersTab createFilter() {
         createButtonPopup.click();
+        if (errorPopApDoc.isDisplayed()){
+            errorPopApDoc.click();
+            cancelButton.click();
+            cancelButtonAppove.click();
+            return this;
+        }
+        else{
+            closePopApFilter.click();
+            descriptionFilter.click();
+        }
+
         return this;
     }
 
-    public FiltersTab closePopApFilter(){
+    private FiltersTab closePopApFilter(){
         closePopApFilter.click();
         return this;
     }
 
-    public FiltersTab descriptionTable() {
+    private FiltersTab descriptionTable() {
         descriptionFilter.click();
         return this;
     }

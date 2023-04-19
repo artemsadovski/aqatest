@@ -10,7 +10,7 @@ public class RiskProfileTab {
     private final SelenideElement listRiskWorkProcces = $x("//app-select-box[@placeholder='Не выбрано']/*[text()='keyboard_arrow_down']");// список рабочих процессов
     private final SelenideElement addAfRiskProfile = $x("//app-select-box/ul/li[text()='AF']");// выбор AF workflow
     private final SelenideElement addRiskProfileInList = $x("//footer/*[text()='Добавить']"); //добавление риск профиля
-    private final SelenideElement closePopApProfile = $x("//*[text()='close']"); //Закрыть поп-ап создания
+    private final SelenideElement closePopApProfile = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //Закрыть поп-ап создания
     private final SelenideElement riskProfileDescriptionInTable = $x("//td/a[text()='User_test_aqa']/../preceding-sibling::td/app-icon");
 
 

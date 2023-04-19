@@ -9,6 +9,9 @@ public class LoginTests {
     private NotTls notTls = new NotTls();
     private LogInForm logInForm = new LogInForm();
     private RiskProfileTab riskProfileTab= new RiskProfileTab();
+    private DocumentTab documentTab = new DocumentTab();
+    private AddAtr addAtr = new AddAtr();
+    private  VariableTab variableTab = new VariableTab();
 
 
     @BeforeSuite
@@ -23,7 +26,7 @@ public class LoginTests {
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void createFilter() {
         header.clickFilter();
         filtersTab
@@ -36,12 +39,10 @@ public class LoginTests {
                 .inputFilterConditionTest()
                 .checkFilterConditionTest()
                 .backFilterCreate()
-                .createFilter()
-                .closePopApFilter()
-                .descriptionTable();
+                .createFilter();
     }
 
-    @Test
+    @Test (priority = 2)
         public void createRiskProfile() {
         header.clickRiskProfile();
         riskProfileTab
@@ -56,5 +57,56 @@ public class LoginTests {
                 .closePopApRisk()
                 .lookDescrTable();
 
+        }
+
+    @Test (priority = 3)
+        public void createDocument() {
+        header.clickDoc();
+        documentTab
+                .clickButtonAddDoc();
+        addAtr
+                .addAtrPlus()
+                .atrName()
+                .atrDescr()
+                .addAtrBut()
+                .closePopApAtr();
+        documentTab
+                .addDocCode()
+                .addDocName()
+                .clickListFiltersForDoc()
+                .searchFilterForDoc()
+                .selectFilterForDoc()
+                .addAtrForDoc()
+                .addDocument()
+                .closePopApDoc()
+                .searchDocForName()
+                .searchDocForAtr()
+                .lookDocDescr();
+
     }
+
+    @Test (priority = 4)
+    public void createVariable() {
+        header.clickVar();
+        variableTab
+                .clickButtonVar()
+                .addVarId()
+                .listTypeDocument()
+                .cLickfieldTypeDoc()
+                .selectTypeDoc()
+                .listAtr()
+                .clickFieldAtr()
+                .addAtr()
+                .clickListAnchor()
+                .addAnchorVar()
+                .listFuncVar()
+                .addFuncVar()
+                .addPeriodFunc()
+                .addPeriodNumber()
+                .addVariable()
+                .closePopApVar()
+                .searchVar()
+                .findVarDescr();
+    }
+
     }
