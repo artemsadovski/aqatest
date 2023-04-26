@@ -12,6 +12,9 @@ public class LoginTests {
     private DocumentTab documentTab = new DocumentTab();
     private AddAtr addAtr = new AddAtr();
     private  VariableTab variableTab = new VariableTab();
+    private  FactorTab factorTab = new FactorTab();
+    private  RullsTab rullsTab = new RullsTab();
+    private  TasksTab tasksTab = new TasksTab();
 
 
     @BeforeSuite
@@ -107,6 +110,89 @@ public class LoginTests {
                 .closePopApVar()
                 .searchVar()
                 .findVarDescr();
+    }
+
+    @Test (priority = 5)
+    public void createFactor() {
+        header.clickFactor();
+        factorTab
+                .clickAddFactorTab()
+                .clickSelectMathFactor()
+                .inputAddNameFactor()
+                .inputAddDescrFactor()
+                .inputAddConditionFactor()
+                .clickValidationFactor()
+                .clickWindowTest()
+                .inputFieldTestUser()
+                .inputAddFieldTestVar()
+                .clickCheckFactor()
+                .clickBackToFactor()
+                .clickAddFactor()
+                .clickClosePopApFactor()
+                .clickSearchFieldFactor()
+                .clickFactorDescr();
+    }
+
+    @Test (priority = 6)
+    public void createRull() {
+        header.clickRull();
+        rullsTab
+                .clickAddRullTab()
+                .inputAddRullName()
+                .clickListRullRiskProfile()
+                .clickAddRullRiskProfile()
+                .inputAddRullDescr()
+                .clickAddRullPostCheck()
+                .clickaddRullFactor()
+                .clickAddRull()
+                .clickClosePopApFactor()
+                .inputSearchFieldRulls()
+                .clickListRullActive()
+                .clickSelectRullActive()
+                .clickListRullCreated()
+                .clickSelectRullCreated()
+                .clickListRullRiskProfileSearch()
+                .clickSelectRullRiskProfileSearch()
+                .clickRullDescr();
+
+    }
+
+    @Test (priority = 7)
+    public void createTask() {
+        try {
+            CreateTask.requestToSts();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @Test (priority = 8)
+    public void workTasks() {
+        header.clickTasks();
+        tasksTab
+                .clickFindTask()
+                .clickSelectFactorTask()
+                .clickCancelSelectFactorTask()
+                .clickSelectVarTask()
+                .clickCanselSelectVarTask()
+                .clickListAssign()
+                .clickAssignArt()
+                .clickStartWorkTask1()
+                .clickCheckButtonGreen()
+                .clickCheckButtonRed()
+                .clickStopWorkTask()
+                .clickStartWorkTask2()
+                .clickCommentTaskButton()
+                .inputFile()
+                .inputCommentTask()
+                .clickCommentTaskAdd()
+                .clickFinishTaskButton()
+                .inputComRezolution()
+                .clickRezActivate()
+                .clickRezActivateDone()
+                .clickRezActivateDoneApprove()
+                .clickBackListTasks();
     }
 
     }

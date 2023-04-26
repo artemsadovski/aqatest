@@ -11,7 +11,7 @@ public class VariableTab {
     private final SelenideElement selectFindDocType = $x("//app-search-select-box/div/ul/li[@title='doc_test_name']"); //выбор найденного документа
     private final SelenideElement listAtr = $x("//app-search-select-box[@formcontrolname='fieldName']/app-icon"); //список атрибута документа
     private final SelenideElement fieldAtr = $x("//app-search-select-box/div/app-text-box/input[@class='no-inner-label']"); //поле поиска атрибута
-    private final SelenideElement selectAtr = $x("//app-search-select-box/div/ul/li[@class='with-tooltip']"); //выбор найденного атрибута
+    private final SelenideElement selectAtr = $x("//app-search-select-box/div/ul/li[normalize-space(text())='Сумма транзакции']"); //выбор найденного атрибута
     private final SelenideElement listAnchor = $x("//app-search-select-box[@class='ng-untouched ng-pristine ng-invalid']"); //список якорей
     private final SelenideElement selectAnchor = $x("//ul/li[@title='Идентификатор пользователя']"); //выбор якоря
     private final SelenideElement listFunc = $x("//app-select-box[@formcontrolname='function']/app-icon"); //список функций
