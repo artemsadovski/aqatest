@@ -1,6 +1,10 @@
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class VariableTab {
@@ -22,6 +26,20 @@ public class VariableTab {
     private final SelenideElement closePopApVar = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //закрыть поп-ап создания
     private final SelenideElement searchVar = $x("//input[@class='no-inner-label']"); //поиск по названию переменной
     private final SelenideElement varDescr = $x("//td/a[text()='var_test']/../preceding-sibling::td[@class='show-more']/app-icon"); //описание перменной
+    private final SelenideElement deleteVar = $x("//td/a[text()='var_test']/../following-sibling::td/app-icon"); //выбор списка с действиями для удаления переменной
+    private final SelenideElement selectDeleteVar = $x("//td/a[text()='var_test']/../following-sibling::td/div/ul/li[text()='Удалить']"); //удаление переменной
+    private final SelenideElement approveSelectDeleteVar = $x("//footer/button[text()='Да']"); // подтвеждение удаления
+    private final SelenideElement popApDelete = $x("//div/app-icon[text()='close']"); // поп-ап удаления
+    private final SelenideElement headVar = $x("//h2[normalize-space(text())='Переменные']"); // проверка заголовка
+    private final SelenideElement checkVarSearch = $x("//td/a[text()='var_test']"); // проверка заголовка
+
+
+
+
+
+
+
+
 
     public VariableTab clickButtonVar(){
         addVarButton.click();
@@ -104,12 +122,42 @@ public class VariableTab {
     }
 
     public VariableTab searchVar(){
-        searchVar.click();
+        searchVar.setValue("var_test");
         return this;
     }
 
     public VariableTab findVarDescr(){
         varDescr.click();
+        return this;
+    }
+
+    public VariableTab clickDeleteVar(){
+        deleteVar.click();
+        return this;
+    }
+
+    public VariableTab clickSelectDeleteVar(){
+        selectDeleteVar.click();;
+        return this;
+    }
+
+    public VariableTab clickApproveSelectDeleteVar(){
+        approveSelectDeleteVar.click();
+        return this;
+    }
+
+    public VariableTab checkPopApDelete(){
+        popApDelete.shouldBe(Condition.visible, Duration.ofSeconds(5));
+        return this;
+    }
+
+    public VariableTab checkHeadVar(){
+        headVar.shouldBe(Condition.visible, Duration.ofSeconds(5));
+        return this;
+    }
+
+    public VariableTab checkVar(){
+        checkVarSearch.shouldNotBe(visible);
         return this;
     }
 

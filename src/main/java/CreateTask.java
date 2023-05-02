@@ -3,8 +3,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CreateTask {
-
-    public static String doc_id_auto = "4883744-48";
+    static int a = (int) (Math.random()*(900000000+1)) + 100000000;
+    public static String doc_id_auto = Integer.toString(a)+-123;
 
     public static void requestToSts() throws Exception {
         //public static void main(String[] args) throws Exception{
@@ -23,6 +23,7 @@ public class CreateTask {
 
         int responseCode = conn.getResponseCode();
         System.out.println("Response Code : " + responseCode);
+        System.out.println(doc_id_auto);
 
     }
 

@@ -195,4 +195,53 @@ public class LoginTests {
                 .clickBackListTasks();
     }
 
+    @Test (priority = 9)
+    public void deleteTab() {
+        header.clickRull();
+        rullsTab
+                .clickDeleteRull()
+                .clickSelectDeleteRull()
+                .clickApproveSelectDeleteRull()
+                .clickPopApDelete();
+
+        header.clickFactor();
+        factorTab
+                .clickDeleteFactor()
+                .clickSelectDeleteFactor()
+                .clickApproveSelectDeleteFactor()
+                .clickPopApDelete();
+        header.clickVar();
+        variableTab
+                .checkHeadVar()
+                .clickDeleteVar()
+                .clickSelectDeleteVar()
+                .clickApproveSelectDeleteVar()
+                .checkPopApDelete().
+                checkVar();
+        header.clickDoc();
+        documentTab
+                .clickDeleteDocument()
+                .clickSelectDeleteDocument()
+                .clickApproveSelectDeleteAtrDoc()
+                .clickButtonAddDoc()
+                .clickDeleteAtr()
+                .clickSelectDeleteAtr()
+                .clickApproveSelectDeleteAtrDoc()
+                .clickBackListDocument();
+        header.clickRiskProfile();
+        riskProfileTab
+                .clickDeleteRiskProfile()
+                .clickSelectDeleteRiskProfile()
+                .clickApproveSelectDeleteRiskProfile();
+        header.clickFilter();
+        filtersTab
+                .clickDeleteFilter()
+                .clickSelectDeleteFilter()
+                .clickApproveSelectDeleteFilter();
+
+
+
+
+    }
+
     }

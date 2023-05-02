@@ -20,6 +20,11 @@ public class RullsTab {
     private final SelenideElement listRullRiskProfileSearch = $x("//app-select-box[@formcontrolname='riskProfile']/app-icon"); // список риск профилей
     private final SelenideElement selectRullRiskProfileSearch = $x("//ul/li[text()='User_test_aqa']"); // выбор риск профиля
     private final SelenideElement rullDescr = $x("//td/a[text()='R_test_rule']/../preceding-sibling::td[@class='show-more']/app-icon"); // выбор риск профиля
+    private final SelenideElement deleteRull = $x("//td/a[text()='R_test_rule']/../following-sibling::td/app-icon"); // выбор списка с действиями для удаления правила
+    private final SelenideElement selectDeleteRull = $x("//td/a[text()='R_test_rule']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаление правила
+    private final SelenideElement approveSelectDeleteRull = $x("//footer/button[text()='Да']"); // подтвеждение удаления
+    private final SelenideElement popApDelete = $x("//div/app-icon[text()='close']"); // поп-ап удаления
+
 
 
     public RullsTab clickAddRullTab(){
@@ -104,6 +109,26 @@ public class RullsTab {
 
     public RullsTab clickRullDescr(){
         rullDescr.click();
+        return this;
+    }
+
+    public RullsTab clickDeleteRull(){
+        deleteRull.click();
+        return this;
+    }
+
+    public RullsTab clickSelectDeleteRull(){
+        selectDeleteRull.click();
+        return this;
+    }
+
+    public RullsTab clickApproveSelectDeleteRull(){
+        approveSelectDeleteRull.click();
+        return this;
+    }
+
+    public RullsTab clickPopApDelete(){
+        popApDelete.click();
         return this;
     }
 

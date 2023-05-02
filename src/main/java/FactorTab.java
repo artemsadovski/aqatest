@@ -19,6 +19,12 @@ public class FactorTab {
     private final SelenideElement closePopApFactor = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //закрыть поп-ап создания фактора
     private final SelenideElement searchFieldFactor = $x("//input[@class='no-inner-label']"); // поле поиска фактора
     private final SelenideElement factorDescr = $x("//td/a[text()='F_test_factor']/../preceding-sibling::td[@class='show-more']/app-icon"); // поле поиска фактора
+    private final SelenideElement deleteFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/app-icon"); // выбор списка с действиями для удаления фактора
+    private final SelenideElement selectDeleteFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаление фактора
+    private final SelenideElement approveSelectDeleteFactor = $x("//footer/button[text()='Да']"); // подтвеждение удаления
+
+    private final SelenideElement popApDelete = $x("//div/app-icon[text()='close']"); // поп-ап удаления
+
 
 
     public FactorTab clickAddFactorTab(){
@@ -93,6 +99,26 @@ public class FactorTab {
 
     public FactorTab clickFactorDescr(){
         factorDescr.click();
+        return this;
+    }
+
+    public FactorTab clickDeleteFactor(){
+        deleteFactor.click();
+        return this;
+    }
+
+    public FactorTab clickSelectDeleteFactor(){
+        selectDeleteFactor.click();
+        return this;
+    }
+
+    public FactorTab clickApproveSelectDeleteFactor(){
+        approveSelectDeleteFactor.click();
+        return this;
+    }
+
+    public FactorTab clickPopApDelete(){
+        popApDelete.click();
         return this;
     }
 

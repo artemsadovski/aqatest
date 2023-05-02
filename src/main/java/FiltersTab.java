@@ -11,9 +11,9 @@ public class FiltersTab {
     private final SelenideElement searchFilter = $x("//app-text-box/input"); //фильтер в таблице
     private final SelenideElement descriptionFilter = $x("//td/a[text()='FL_TEST_AQA']/../preceding-sibling::td/app-icon"); //просмотр описания фильтра в таблице
     private final SelenideElement putFilter = $x("//div/ul/li[text()='Редактировать']"); //вызов кнопки редактирования
-    private final SelenideElement deleteFilter = $x("//div/ul/li[text()='Удалить']"); //вызов кнопки удаления фильтра
-    private final SelenideElement deleteFilterYes = $x("//footer/button[@class='attention']"); //поп-ап удаления фильтра, кнопка ДА
-    private final SelenideElement deleteFilterNo = $x("//footer/button[@class='cancel']"); //поп-ап удаления фильтра, кнопка НЕТ
+    //private final SelenideElement deleteFilter = $x("//div/ul/li[text()='Удалить']"); //вызов кнопки удаления фильтра
+    //private final SelenideElement deleteFilterYes = $x("//footer/button[@class='attention']"); //поп-ап удаления фильтра, кнопка ДА
+    //private final SelenideElement deleteFilterNo = $x("//footer/button[@class='cancel']"); //поп-ап удаления фильтра, кнопка НЕТ
     private final SelenideElement addFilterName = $x("//app-text-box[@formcontrolname='factorName']/input"); //Форма Добавления фильтра, наименование фильтра
     private final SelenideElement addFilterDescription = $x("//app-text-area[@formcontrolname='description']/textarea"); //Форма Добавления фильтра, описание фильтра
     private final SelenideElement addFilterCondition = $x("//*[@class='program-editor-wrap']/div[@class='program-editor']"); //Форма Добавления фильтра, условие фильтра
@@ -27,6 +27,9 @@ public class FiltersTab {
     private final SelenideElement errorPopApDoc = $x("//div[@class='error']/following::div/app-icon[text()='close']"); //поп-ап ошибка такой элемент есть
     private final SelenideElement cancelButton = $x("//button[@class='cancel']"); //отмена создания
     private final SelenideElement cancelButtonAppove = $x("//footer/button[text()='Да']"); //подтверждение отмены
+    private final SelenideElement deleteFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/app-icon"); //// выбор списка с действиями для удаления фильтр
+    private final SelenideElement selectDeleteFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаления фильтра
+    private final SelenideElement approveSelectDeleteFilter = $x("//footer/button[text()='Да']"); // подтверждение удаления
 
 
     public FiltersTab clickCreateButton() {
@@ -97,6 +100,21 @@ public class FiltersTab {
 
     private FiltersTab descriptionTable() {
         descriptionFilter.click();
+        return this;
+    }
+
+    public FiltersTab clickDeleteFilter(){
+        deleteFilter.click();
+        return this;
+    }
+
+    public FiltersTab clickSelectDeleteFilter(){
+        selectDeleteFilter.click();
+        return this;
+    }
+
+    public FiltersTab clickApproveSelectDeleteFilter(){
+        approveSelectDeleteFilter.click();
         return this;
     }
 

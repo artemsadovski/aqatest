@@ -32,10 +32,17 @@ public class DocumentTab {
     private final SelenideElement closePopApDoc = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //закрыть поп-ап
     private final SelenideElement searchDocName = $x("//input[@class='no-inner-label']"); //поиск по названию документа
     private final SelenideElement searchDocAtr = $x("//app-text-box[@formcontrolname='attribute']/input"); //поиск по названию атрибута
-    private final SelenideElement DocumentDescription = $x("//td[normalize-space(text())='doc_test+FL_TEST_AQA']/preceding-sibling::td[@class='show-more']/app-icon"); //просмотр описания документа
+    private final SelenideElement documentDescription = $x("//td[normalize-space(text())='doc_test+FL_TEST_AQA']/preceding-sibling::td[@class='show-more']/app-icon"); //просмотр описания документа
+    private final SelenideElement deleteDocument = $x("//td/a[text()='doc_test_name']/../following-sibling::td/app-icon"); //выбор списка с действиями для удаления документа
+    private final SelenideElement selectDeleteDocument = $x("//td/a[text()='doc_test_name']/../following-sibling::td/div/ul/li[text()='Удалить']"); //удаление документа
+    private final SelenideElement selectDocument = $x("//td/a[text()='doc_test_name']"); //переход в документ
+    private final SelenideElement deleteListAtrForDocument = $x("//tr/td[normalize-space(text())='TEST_FIELD']/preceding-sibling::td/app-icon"); //убрать атрибут из документа
+    private final SelenideElement deleteAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/app-icon"); //выбор списка с действиями для удаления атрибута
+    private final SelenideElement selectDeleteAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/div/ul/li[text()='Удалить']"); //подтверждение удаления
+    private final SelenideElement backListDocument = $x("//nav/button[text()='Назад к списку документов']"); //вернуться к списку докуметов
+    private final SelenideElement approveSelectDeleteAtrDoc = $x("//footer/button[text()='Да']"); // подтвеждение удаления
 
 
-    //button[@class='cancel']
 
     public DocumentTab clickButtonAddDoc(){
         addButtonDocument.click();;
@@ -109,8 +116,49 @@ public class DocumentTab {
     }
 
     public DocumentTab lookDocDescr(){
-        DocumentDescription.click();
+        documentDescription.click();
         return this;
     }
+
+    private DocumentTab clickSelectDocument(){
+        selectDocument.click();
+        return this;
+    }
+
+    private DocumentTab clickDeleteListAtrForDocument(){
+        deleteListAtrForDocument.click();
+        return this;
+    }
+
+    public DocumentTab clickDeleteAtr(){
+        deleteAtr.click();
+        return this;
+    }
+
+    public DocumentTab clickSelectDeleteAtr(){
+        selectDeleteAtr.click();
+        return this;
+    }
+
+    public DocumentTab clickBackListDocument(){
+        backListDocument.click();
+        return this;
+    }
+
+    public DocumentTab clickDeleteDocument(){
+        deleteDocument.click();
+        return this;
+    }
+
+    public DocumentTab clickSelectDeleteDocument(){
+        selectDeleteDocument.click();
+        return this;
+    }
+
+    public DocumentTab clickApproveSelectDeleteAtrDoc(){
+        approveSelectDeleteAtrDoc.click();
+        return this;
+    }
+
 
 }

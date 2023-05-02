@@ -12,6 +12,12 @@ public class RiskProfileTab {
     private final SelenideElement addRiskProfileInList = $x("//footer/*[text()='Добавить']"); //добавление риск профиля
     private final SelenideElement closePopApProfile = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //Закрыть поп-ап создания
     private final SelenideElement riskProfileDescriptionInTable = $x("//td/a[text()='User_test_aqa']/../preceding-sibling::td/app-icon");
+    private final SelenideElement deleteRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/app-icon"); //// выбор списка с действиями для удаления риск профиль
+    private final SelenideElement selectDeleteRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаление риск-профиля
+    private final SelenideElement approveSelectDeleteRiskProfile = $x("//footer/button[text()='Да']"); // подтверждение удаления
+
+
+
 
 
     public RiskProfileTab addButtonProfile() {
@@ -56,6 +62,21 @@ public class RiskProfileTab {
 
     public RiskProfileTab lookDescrTable(){
         riskProfileDescriptionInTable.click();
+        return this;
+    }
+
+    public RiskProfileTab clickDeleteRiskProfile(){
+        deleteRiskProfile.click();
+        return this;
+    }
+
+    public RiskProfileTab clickSelectDeleteRiskProfile(){
+        selectDeleteRiskProfile.click();
+        return this;
+    }
+
+    public RiskProfileTab clickApproveSelectDeleteRiskProfile(){
+        approveSelectDeleteRiskProfile.click();
         return this;
     }
 }
