@@ -1,6 +1,8 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.File;
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$x;
 public class TasksTab {
@@ -30,6 +32,7 @@ public class TasksTab {
     private final SelenideElement rezActivateDone = $x("//footer/button[text()='Завершить']");//завершение
     private final SelenideElement rezActivateDoneApprove = $x("//footer/button[text()='Активировать пользователя']");//подтверждение завершения
     private final SelenideElement backListTasks = $x("//div/span[text()='Назад к списку задач']");//к списку заадч
+    private final SelenideElement headTasks = $x("//h2[normalize-space(text())='Список задач']"); // проверка заголовка
 
 
     public TasksTab clickFindTask(){
@@ -139,6 +142,10 @@ public class TasksTab {
 
     public TasksTab clickBackListTasks(){
         backListTasks.click();
+        return this;
+    }
+    public TasksTab checkHeadTasks() {
+        headTasks.shouldBe(Condition.visible, Duration.ofSeconds(5));
         return this;
     }
 

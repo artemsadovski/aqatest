@@ -1,4 +1,7 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -19,11 +22,13 @@ public class FactorTab {
     private final SelenideElement closePopApFactor = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //закрыть поп-ап создания фактора
     private final SelenideElement searchFieldFactor = $x("//input[@class='no-inner-label']"); // поле поиска фактора
     private final SelenideElement factorDescr = $x("//td/a[text()='F_test_factor']/../preceding-sibling::td[@class='show-more']/app-icon"); // поле поиска фактора
-    private final SelenideElement deleteFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/app-icon"); // выбор списка с действиями для удаления фактора
+    private final SelenideElement workToFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/app-icon"); // выбор списка с действиями для фактора
     private final SelenideElement selectDeleteFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаление фактора
+    private final SelenideElement selectEditFactor = $x("//td/a[text()='F_test_factor']/../following-sibling::td/div/ul/li[text()='Редактировать']"); // редактирование фактора
     private final SelenideElement approveSelectDeleteFactor = $x("//footer/button[text()='Да']"); // подтвеждение удаления
-
     private final SelenideElement popApDelete = $x("//div/app-icon[text()='close']"); // поп-ап удаления
+    private final SelenideElement headFactor = $x("//h2[normalize-space(text())='Факторы']"); // проверка заголовка
+    private final SelenideElement approveEditFactor = $x("//app-confirmation-popup/footer/button[@class='popup-action']"); //подтверждение редактирования
 
 
 
@@ -43,12 +48,19 @@ public class FactorTab {
     }
 
     public FactorTab inputAddDescrFactor(){
-        addDescrFactor.setValue("bla bla bla bla");
+        addDescrFactor.setValue("Комментарий редакция 1");
         return this;
     }
-
-    public FactorTab inputAddConditionFactor(){
+    public FactorTab editDescrFactor(){
+        addDescrFactor.setValue("Комментарий редакция 2");
+        return this;
+    }
+    public FactorTab editConditionFactor(){
         addConditionFactor.setValue("IF var_test > 10*BV");
+        return this;
+    }
+    public FactorTab inputConditionFactor(){
+        addConditionFactor.setValue("IF var_test > 1000");
         return this;
     }
 
@@ -102,8 +114,8 @@ public class FactorTab {
         return this;
     }
 
-    public FactorTab clickDeleteFactor(){
-        deleteFactor.click();
+    public FactorTab clickWorkToFactor(){
+        workToFactor.click();
         return this;
     }
 
@@ -111,7 +123,10 @@ public class FactorTab {
         selectDeleteFactor.click();
         return this;
     }
-
+    public FactorTab clickSelectEditFactor(){
+        selectEditFactor.click();
+        return this;
+    }
     public FactorTab clickApproveSelectDeleteFactor(){
         approveSelectDeleteFactor.click();
         return this;
@@ -119,6 +134,14 @@ public class FactorTab {
 
     public FactorTab clickPopApDelete(){
         popApDelete.click();
+        return this;
+    }
+    public FactorTab checkHeadFactor(){
+        headFactor.shouldBe(Condition.visible, Duration.ofSeconds(5));
+        return this;
+    }
+    public FactorTab clickApproveEditFactor(){
+        approveEditFactor.click();
         return this;
     }
 

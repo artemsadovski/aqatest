@@ -12,11 +12,12 @@ public class DocumentTab {
     private final SelenideElement listFiltersForDoc = $x("//app-search-select-box/app-icon"); //список фильтров
     private final SelenideElement findFilterField = $x("//div[@class='list']/app-text-box/input"); //поле поиска фильтра
     private final SelenideElement selectFilterForDoc = $x("//*[@title='FL_TEST_AQA']"); //выбор фильтра для документа
+    //1 атрибут
+    private final SelenideElement oneAtrAddListDocument = $x("//td[normalize-space(text())='CURRENCY']/preceding-sibling::td/app-icon");// добавить один атрибут
 
     //Добавление атрибутов в документ
 
     private final List<SelenideElement> elements = Arrays.asList(
-            $x("//td[normalize-space(text())='CURRENCY']/preceding-sibling::td/app-icon"),
             $x("//td[normalize-space(text())='AMOUNT_USD']/preceding-sibling::td/app-icon"),
             $x("//td[normalize-space(text())='DOC_SOURCE']/preceding-sibling::td/app-icon"),
             $x("//td[normalize-space(text())='AMOUNT']/preceding-sibling::td/app-icon"),
@@ -33,14 +34,17 @@ public class DocumentTab {
     private final SelenideElement searchDocName = $x("//input[@class='no-inner-label']"); //поиск по названию документа
     private final SelenideElement searchDocAtr = $x("//app-text-box[@formcontrolname='attribute']/input"); //поиск по названию атрибута
     private final SelenideElement documentDescription = $x("//td[normalize-space(text())='doc_test+FL_TEST_AQA']/preceding-sibling::td[@class='show-more']/app-icon"); //просмотр описания документа
-    private final SelenideElement deleteDocument = $x("//td/a[text()='doc_test_name']/../following-sibling::td/app-icon"); //выбор списка с действиями для удаления документа
+    private final SelenideElement workToDocument = $x("//td/a[text()='doc_test_name']/../following-sibling::td/app-icon"); //выбор списка с действиями для документа
+    private final SelenideElement workToDocumentEdit = $x("//td/a[text()='doc_test']/../following-sibling::td/app-icon"); //выбор списка с действиями для документа
     private final SelenideElement selectDeleteDocument = $x("//td/a[text()='doc_test_name']/../following-sibling::td/div/ul/li[text()='Удалить']"); //удаление документа
     private final SelenideElement selectDocument = $x("//td/a[text()='doc_test_name']"); //переход в документ
     private final SelenideElement deleteListAtrForDocument = $x("//tr/td[normalize-space(text())='TEST_FIELD']/preceding-sibling::td/app-icon"); //убрать атрибут из документа
-    private final SelenideElement deleteAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/app-icon"); //выбор списка с действиями для удаления атрибута
+    private final SelenideElement workToAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/app-icon"); //выбор списка с действиями для атрибута
     private final SelenideElement selectDeleteAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/div/ul/li[text()='Удалить']"); //подтверждение удаления
     private final SelenideElement backListDocument = $x("//nav/button[text()='Назад к списку документов']"); //вернуться к списку докуметов
     private final SelenideElement approveSelectDeleteAtrDoc = $x("//footer/button[text()='Да']"); // подтвеждение удаления
+    private final SelenideElement selectEditDocument = $x("//td/a[text()='doc_test']/../following-sibling::td/div/ul/li[text()='Редактировать']"); //редактирование документа
+    private final SelenideElement selectEditAtr = $x("//td[normalize-space(text())='TEST_FIELD']/following-sibling::td/div/ul/li[text()='Редактировать']"); //редактирование атрибута
 
 
 
@@ -55,6 +59,11 @@ public class DocumentTab {
     }
 
     public DocumentTab addDocName(){
+        addNameDocument.setValue("doc_test");
+        return this;
+    }
+
+    public DocumentTab editDocName(){
         addNameDocument.setValue("doc_test_name");
         return this;
     }
@@ -130,8 +139,8 @@ public class DocumentTab {
         return this;
     }
 
-    public DocumentTab clickDeleteAtr(){
-        deleteAtr.click();
+    public DocumentTab clickWorkToAtr(){
+        workToAtr.click();
         return this;
     }
 
@@ -145,8 +154,8 @@ public class DocumentTab {
         return this;
     }
 
-    public DocumentTab clickDeleteDocument(){
-        deleteDocument.click();
+    public DocumentTab clickWorkToDocument(){
+        workToDocument.click();
         return this;
     }
 
@@ -157,6 +166,24 @@ public class DocumentTab {
 
     public DocumentTab clickApproveSelectDeleteAtrDoc(){
         approveSelectDeleteAtrDoc.click();
+        return this;
+    }
+    public DocumentTab clickOneAtrAddListDocument(){
+        oneAtrAddListDocument.click();
+        return this;
+    }
+
+    public DocumentTab clickSelectEditDocument(){
+        selectEditDocument.click();
+        return this;
+    }
+    public DocumentTab clickSelectEditAtr(){
+        selectEditAtr.click();
+        return this;
+    }
+
+    public DocumentTab clickWorkToDocumentEdit(){
+        workToDocumentEdit.click();
         return this;
     }
 

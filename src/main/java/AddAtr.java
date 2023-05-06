@@ -20,8 +20,13 @@ public class AddAtr {
         return this;
     }
 
-    public AddAtr atrDescr(){
+    public AddAtr editAtrDescr(){
         addAtrDescr.setValue("Тестовое описание");
+        return this;
+    }
+
+    public AddAtr addAtrDescr(){
+        addAtrDescr.setValue("Тестовое");
         return this;
     }
 

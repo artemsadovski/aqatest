@@ -8,13 +8,13 @@ public class LoginTests {
     private FiltersTab filtersTab = new FiltersTab();
     private NotTls notTls = new NotTls();
     private LogInForm logInForm = new LogInForm();
-    private RiskProfileTab riskProfileTab= new RiskProfileTab();
+    private RiskProfileTab riskProfileTab = new RiskProfileTab();
     private DocumentTab documentTab = new DocumentTab();
     private AddAtr addAtr = new AddAtr();
-    private  VariableTab variableTab = new VariableTab();
-    private  FactorTab factorTab = new FactorTab();
-    private  RullsTab rullsTab = new RullsTab();
-    private  TasksTab tasksTab = new TasksTab();
+    private VariableTab variableTab = new VariableTab();
+    private FactorTab factorTab = new FactorTab();
+    private RullsTab rullsTab = new RullsTab();
+    private TasksTab tasksTab = new TasksTab();
 
 
     @BeforeSuite
@@ -29,7 +29,7 @@ public class LoginTests {
     }
 
 
-    @Test (priority = 1)
+    @Test(priority = 1)
     public void createFilter() {
         header.clickFilter();
         filtersTab
@@ -37,45 +37,71 @@ public class LoginTests {
                 .inputFilterName()
                 .inputFilterDescription()
                 .inputFilterCondition()
+                .createFilter()
+                .clickWorkFilter()
+                .clickSelectEditFilter()
+                .editFilterDescription()
+                .editFilterCondition()
                 .clickValidationButton()
                 .clickTestButton()
                 .inputFilterConditionTest()
                 .checkFilterConditionTest()
                 .backFilterCreate()
                 .createFilter();
+
     }
 
-    @Test (priority = 2)
-        public void createRiskProfile() {
+    @Test(priority = 2)
+    public void createRiskProfile() {
         header.clickRiskProfile();
         riskProfileTab
                 .addButtonProfile()
                 .addName()
                 .addAnchor()
-                .addAnchor()
                 .dropList()
-                .afWorkProcces()
+                .AfCryptoRiskProfile()
                 .addDescription()
                 .addRiskProfile()
                 .closePopApRisk()
+                .clickWorkToRiskProfile()
+                .clickEditRiskProfile()
+                .editAnchor()
+                .dropList()
+                .afWorkProcces()
+                .editDescription()
+                .clickEditRiskProfileInList()
+                .closePopApRisk()
                 .lookDescrTable();
 
-        }
+    }
 
-    @Test (priority = 3)
-        public void createDocument() {
+    @Test(priority = 3)
+    public void createDocument() {
         header.clickDoc();
         documentTab
                 .clickButtonAddDoc();
         addAtr
                 .addAtrPlus()
                 .atrName()
-                .atrDescr()
+                .addAtrDescr()
                 .addAtrBut()
                 .closePopApAtr();
         documentTab
                 .addDocCode()
                 .addDocName()
+                .clickOneAtrAddListDocument()
+                .addDocument()
+                .closePopApDoc()
+                .clickWorkToDocumentEdit()
+                .clickSelectEditDocument()
+                .clickWorkToAtr()
+                .clickSelectEditAtr();
+        addAtr
+                .editAtrDescr()
+                .addAtrBut()
+                .closePopApAtr();
+        documentTab
+                .editDocName()
                 .clickListFiltersForDoc()
                 .searchFilterForDoc()
                 .selectFilterForDoc()
@@ -88,39 +114,82 @@ public class LoginTests {
 
     }
 
-    @Test (priority = 4)
+    @Test(priority = 4)
     public void createVariable() {
         header.clickVar();
         variableTab
                 .clickButtonVar()
+                .checkHeadVar()
                 .addVarId()
-                .listTypeDocument()
+                .listTypeDocumentOne()
                 .cLickfieldTypeDoc()
                 .selectTypeDoc()
-                .listAtr()
+                .listAtrOne()
                 .clickFieldAtr()
-                .addAtr()
-                .clickListAnchor()
-                .addAnchorVar()
+                .addAtrOne()
+                .clickAddTypeAndAtr()
+                .listTypeDocumentTwo()
+                .cLickfieldTypeDoc()
+                .selectTypeDoc()
+                .listAtrTwo()
+                .clickFieldAtr()
+                .addAtrTwo()
+                .clickListAnchorOne()
+                .addAnchorVarOne()
+                .clickAddAnchor()
+                .clickListAnchorTwo()
+                .addAnchorVarTwo()
                 .listFuncVar()
-                .addFuncVar()
-                .addPeriodFunc()
-                .addPeriodNumber()
+                .addFuncVarMin()
+                .addPeriodFuncDay()
+                .addPeriodNumberDay()
+                .clickAddAccuracy()
+                .clickAddDescr()
                 .addVariable()
+                .closePopApVar()
+
+                //редактирование переменной
+                .clickWorkToVar()
+                .clickSelectEditVar()
+                .listTypeDocumentOne()
+                .listAtrOne()
+                .clickFieldAtr()
+                .editAtr()
+                .clickDeleteDocTypeTwo()
+                .clickEditAnchorOne()
+                .clickEditSelectAnchor()
+                .clickDeleteAnchorTwo()
+                .listFuncVar()
+                .addFuncVarSum()
+                .addPeriodFuncMinut()
+                .addPeriodNumberMinute()
+                .editAddDescr()
+                .addVariable()
+                .clickApproveEditVar()
                 .closePopApVar()
                 .searchVar()
                 .findVarDescr();
     }
 
-    @Test (priority = 5)
+    @Test(priority = 5)
     public void createFactor() {
         header.clickFactor();
         factorTab
+                .checkHeadFactor()
                 .clickAddFactorTab()
                 .clickSelectMathFactor()
                 .inputAddNameFactor()
                 .inputAddDescrFactor()
-                .inputAddConditionFactor()
+                .inputConditionFactor()
+                .clickAddFactor()
+                .clickClosePopApFactor()
+
+                //редактирование фактора
+
+                .clickWorkToFactor()
+                .clickSelectEditFactor()
+                .editDescrFactor()
+                .editConditionFactor()
                 .clickValidationFactor()
                 .clickWindowTest()
                 .inputFieldTestUser()
@@ -128,23 +197,39 @@ public class LoginTests {
                 .clickCheckFactor()
                 .clickBackToFactor()
                 .clickAddFactor()
+                .clickApproveEditFactor()
                 .clickClosePopApFactor()
                 .clickSearchFieldFactor()
                 .clickFactorDescr();
     }
 
-    @Test (priority = 6)
+    @Test(priority = 6)
     public void createRull() {
         header.clickRull();
         rullsTab
+                .checkHeadRulls()
                 .clickAddRullTab()
                 .inputAddRullName()
                 .clickListRullRiskProfile()
                 .clickAddRullRiskProfile()
                 .inputAddRullDescr()
-                .clickAddRullPostCheck()
-                .clickaddRullFactor()
+                .clickUnchekedRull()
+                .clickAddRullNoPostCheck()
+                .clickAddRullFactor()
                 .clickAddRull()
+                .clickClosePopApFactor()
+
+                //Редактирование правила
+                .clickWorkToRull()
+                .clickSelectEditRull()
+                .clickListRullRiskProfile()
+                .clickEditRullRiskProfile()
+                .editRullDescr()
+                .clickUnchekedRull()
+                .clickAddRullPostCheck()
+                .clickDeleteFactorFromList()
+                .clickEditRullFactor()
+                .clickSaveAfterEdit()
                 .clickClosePopApFactor()
                 .inputSearchFieldRulls()
                 .clickListRullActive()
@@ -154,10 +239,9 @@ public class LoginTests {
                 .clickListRullRiskProfileSearch()
                 .clickSelectRullRiskProfileSearch()
                 .clickRullDescr();
-
     }
 
-    @Test (priority = 7)
+    @Test(priority = 7)
     public void createTask() {
         try {
             CreateTask.requestToSts();
@@ -167,10 +251,11 @@ public class LoginTests {
     }
 
 
-    @Test (priority = 8)
+    @Test(priority = 8)
     public void workTasks() {
         header.clickTasks();
         tasksTab
+                .checkHeadTasks()
                 .clickFindTask()
                 .clickSelectFactorTask()
                 .clickCancelSelectFactorTask()
@@ -195,53 +280,51 @@ public class LoginTests {
                 .clickBackListTasks();
     }
 
-    @Test (priority = 9)
+    @Test(priority = 9)
     public void deleteTab() {
         header.clickRull();
         rullsTab
-                .clickDeleteRull()
+                .clickWorkToRull()
                 .clickSelectDeleteRull()
                 .clickApproveSelectDeleteRull()
                 .clickPopApDelete();
 
         header.clickFactor();
         factorTab
-                .clickDeleteFactor()
+                .clickWorkToFactor()
                 .clickSelectDeleteFactor()
                 .clickApproveSelectDeleteFactor()
                 .clickPopApDelete();
         header.clickVar();
         variableTab
                 .checkHeadVar()
-                .clickDeleteVar()
+                .clickWorkToVar()
                 .clickSelectDeleteVar()
                 .clickApproveSelectDeleteVar()
                 .checkPopApDelete().
                 checkVar();
         header.clickDoc();
         documentTab
-                .clickDeleteDocument()
+                .clickWorkToDocument()
                 .clickSelectDeleteDocument()
                 .clickApproveSelectDeleteAtrDoc()
                 .clickButtonAddDoc()
-                .clickDeleteAtr()
+                .clickWorkToAtr()
                 .clickSelectDeleteAtr()
                 .clickApproveSelectDeleteAtrDoc()
                 .clickBackListDocument();
         header.clickRiskProfile();
         riskProfileTab
-                .clickDeleteRiskProfile()
+                .clickWorkToRiskProfile()
                 .clickSelectDeleteRiskProfile()
                 .clickApproveSelectDeleteRiskProfile();
         header.clickFilter();
         filtersTab
-                .clickDeleteFilter()
+                .clickWorkFilter()
                 .clickSelectDeleteFilter()
                 .clickApproveSelectDeleteFilter();
 
 
-
-
     }
 
-    }
+}

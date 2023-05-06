@@ -9,12 +9,15 @@ public class RiskProfileTab {
     private final SelenideElement addDescriptionRiskProfile = $x("//app-text-area[@formcontrolname='description']/textarea");// поле ввода описания риск профиля
     private final SelenideElement listRiskWorkProcces = $x("//app-select-box[@placeholder='Не выбрано']/*[text()='keyboard_arrow_down']");// список рабочих процессов
     private final SelenideElement addAfRiskProfile = $x("//app-select-box/ul/li[text()='AF']");// выбор AF workflow
+    private final SelenideElement addAFCryptoRiskProfile = $x("//app-select-box/ul/li[text()='AFCrypto']");// выбор AFCrypto workflow
     private final SelenideElement addRiskProfileInList = $x("//footer/*[text()='Добавить']"); //добавление риск профиля
+    private final SelenideElement editRiskProfileInList = $x("//footer/*[text()='Сохранить']"); //сохранение отредактированного риск профиля
     private final SelenideElement closePopApProfile = $x("//div[@class='success']/following::div/app-icon[text()='close']"); //Закрыть поп-ап создания
     private final SelenideElement riskProfileDescriptionInTable = $x("//td/a[text()='User_test_aqa']/../preceding-sibling::td/app-icon");
-    private final SelenideElement deleteRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/app-icon"); //// выбор списка с действиями для удаления риск профиль
+    private final SelenideElement workToRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/app-icon"); // выбор списка с действиями для риск профиля
     private final SelenideElement selectDeleteRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаление риск-профиля
     private final SelenideElement approveSelectDeleteRiskProfile = $x("//footer/button[text()='Да']"); // подтверждение удаления
+    private final SelenideElement editRiskProfile = $x("//td/a[text()='User_test_aqa']/../following-sibling::td/div/ul/li[text()='Редактировать']"); // удаление риск-профиля
 
 
 
@@ -31,6 +34,11 @@ public class RiskProfileTab {
     }
 
     public RiskProfileTab addAnchor(){
+        addAnchorRiskProfile.setValue("CLIENT_ID");
+        return this;
+    }
+
+    public RiskProfileTab editAnchor(){
         addAnchorRiskProfile.setValue("USER_ID");
         return this;
     }
@@ -40,18 +48,32 @@ public class RiskProfileTab {
         return this;
     }
 
+    public RiskProfileTab AfCryptoRiskProfile(){
+        addAFCryptoRiskProfile.click();
+        return this;
+    }
+
     public RiskProfileTab afWorkProcces(){
         addAfRiskProfile.click();
         return this;
     }
 
     public RiskProfileTab addDescription(){
+        addDescriptionRiskProfile.setValue("Описание");
+        return this;
+    }
+
+    public RiskProfileTab editDescription(){
         addDescriptionRiskProfile.setValue("Описание bla bla bla");
         return this;
     }
 
     public RiskProfileTab addRiskProfile(){
         addRiskProfileInList.click();
+        return this;
+    }
+    public RiskProfileTab clickEditRiskProfileInList(){
+        editRiskProfileInList.click();
         return this;
     }
 
@@ -65,8 +87,8 @@ public class RiskProfileTab {
         return this;
     }
 
-    public RiskProfileTab clickDeleteRiskProfile(){
-        deleteRiskProfile.click();
+    public RiskProfileTab clickWorkToRiskProfile(){
+        workToRiskProfile.click();
         return this;
     }
 
@@ -77,6 +99,10 @@ public class RiskProfileTab {
 
     public RiskProfileTab clickApproveSelectDeleteRiskProfile(){
         approveSelectDeleteRiskProfile.click();
+        return this;
+    }
+    public RiskProfileTab clickEditRiskProfile(){
+        editRiskProfile.click();;
         return this;
     }
 }

@@ -1,8 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
 
-import java.time.Duration;
-
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class FiltersTab {
@@ -10,7 +7,7 @@ public class FiltersTab {
     private final SelenideElement createButton = $x("//*[@class = 'action']"); //кнопка добавить
     private final SelenideElement searchFilter = $x("//app-text-box/input"); //фильтер в таблице
     private final SelenideElement descriptionFilter = $x("//td/a[text()='FL_TEST_AQA']/../preceding-sibling::td/app-icon"); //просмотр описания фильтра в таблице
-    private final SelenideElement putFilter = $x("//div/ul/li[text()='Редактировать']"); //вызов кнопки редактирования
+    private final SelenideElement putFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/app-icon"); //вызов кнопки редактирования
     //private final SelenideElement deleteFilter = $x("//div/ul/li[text()='Удалить']"); //вызов кнопки удаления фильтра
     //private final SelenideElement deleteFilterYes = $x("//footer/button[@class='attention']"); //поп-ап удаления фильтра, кнопка ДА
     //private final SelenideElement deleteFilterNo = $x("//footer/button[@class='cancel']"); //поп-ап удаления фильтра, кнопка НЕТ
@@ -27,9 +24,13 @@ public class FiltersTab {
     private final SelenideElement errorPopApDoc = $x("//div[@class='error']/following::div/app-icon[text()='close']"); //поп-ап ошибка такой элемент есть
     private final SelenideElement cancelButton = $x("//button[@class='cancel']"); //отмена создания
     private final SelenideElement cancelButtonAppove = $x("//footer/button[text()='Да']"); //подтверждение отмены
-    private final SelenideElement deleteFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/app-icon"); //// выбор списка с действиями для удаления фильтр
+    private final SelenideElement workToFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/app-icon"); // выбор списка с действиями для фильтра
     private final SelenideElement selectDeleteFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/div/ul/li[text()='Удалить']"); // удаления фильтра
+    private final SelenideElement selectEditFilter = $x("//td/a[text()='FL_TEST_AQA']/../following-sibling::td/div/ul/li[text()='Редактировать']");
     private final SelenideElement approveSelectDeleteFilter = $x("//footer/button[text()='Да']"); // подтверждение удаления
+    private final SelenideElement approveEditFilter = $x("//app-confirmation-popup/footer/button[@class='popup-action']"); //подтверждение редактирования
+
+
 
 
     public FiltersTab clickCreateButton() {
@@ -42,12 +43,22 @@ public class FiltersTab {
         return this;
     }
 
-    public FiltersTab inputFilterDescription() {
+    public FiltersTab editFilterDescription() {
         addFilterDescription.setValue("Описание бла бла бла");
         return this;
     }
 
+    public FiltersTab inputFilterDescription() {
+        addFilterDescription.setValue("Описание");
+        return this;
+    }
+
     public FiltersTab inputFilterCondition() {
+        addFilterCondition.setValue("IF AMOUNT_BYN>2*BV");
+        return this;
+    }
+
+    public FiltersTab editFilterCondition() {
         addFilterCondition.setValue("IF TEST_FIELD REGEXP_LIKE '^[A-Z0-9]{8}3816[0-9]+$'{ADD_FIELD ('TEST_FIELD_ADD', 'ADD_ATR');}");
         return this;
     }
@@ -85,11 +96,15 @@ public class FiltersTab {
             cancelButtonAppove.click();
             return this;
         }
+        else if(approveEditFilter.isDisplayed()){
+            approveEditFilter.click();
+            closePopApFilter.click();
+            descriptionFilter.click();
+        }
         else{
             closePopApFilter.click();
             descriptionFilter.click();
         }
-
         return this;
     }
 
@@ -103,8 +118,8 @@ public class FiltersTab {
         return this;
     }
 
-    public FiltersTab clickDeleteFilter(){
-        deleteFilter.click();
+    public FiltersTab clickWorkFilter(){
+        workToFilter.click();
         return this;
     }
 
@@ -118,5 +133,8 @@ public class FiltersTab {
         return this;
     }
 
-
+    public FiltersTab clickSelectEditFilter(){
+        selectEditFilter.click();
+        return this;
+    }
 }
