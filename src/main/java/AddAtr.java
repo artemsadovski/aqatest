@@ -1,7 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
-
+//тест
 public class AddAtr {
     private final SelenideElement addAtr = $x("//span[text()='Добавить атрибут']");//кнопка добавления атрибута
     private final SelenideElement addAtrName = $x("//app-text-box[@formcontrolname='attributeName']/input");//поле ввода имени арибута

@@ -2,7 +2,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-
+//тест
 public class LoginTests {
     private Header header = new Header();
     private FiltersTab filtersTab = new FiltersTab();
