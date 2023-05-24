@@ -13,10 +13,20 @@ public class LogInForm {
         return this;
     }
 
+//    public LogInForm inputLoginName() {
+//        login.setValue("test");
+//        return this;
+//    }
+
     public LogInForm inputPassword() {
         password.setValue("1379724_Art");
         return this;
     }
+
+//    public LogInForm inputPassword() {
+//        password.setValue("test");
+//        return this;
+//    }
 
     public LogInForm clickLoginButton() {
         logInButton.click();
