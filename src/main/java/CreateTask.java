@@ -9,7 +9,8 @@ public class CreateTask {
     public static void requestToSts() throws Exception {
         //public static void main(String[] args) throws Exception{
         URL url = new URL("http://192.168.190.37/integration/api/la/dictionary/statistics/filtered/send");
-        //URL url = new URL("http://apollotest.silencesoft.io/integration/api/la/dictionary/statistics/filtered/send");
+        //URL url = new URL("https://ccs-dev-bynex.softclub.by/integration/api/la/dictionary/statistics/filtered/send");
+
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");

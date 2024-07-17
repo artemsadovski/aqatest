@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="Tests">
+        <classes>
+            <class name="Tests"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
+
+<!--        <?xml version="1.0" encoding="UTF-8"?>-->
+<!--        <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+<!--<suite name="TestSuite">-->
+<!--<listeners>-->
+<!--    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>-->
+<!--</listeners>-->
+<!--<test name="Tests in Chrome">-->
+<!--    <parameter name="browser" value="chrome" />-->
+<!--    <classes>-->
+<!--        <class name="Tests"/>-->
+<!--    </classes>-->
+<!--</test>-->
+<!--<test name="Tests in Firefox">-->
+<!--    <parameter name="browser" value="chrome" />-->
+<!--    <classes>-->
+<!--        <class name="Tests"/>-->
+<!--    </classes>-->
+<!--</test>-->
+<!--<test name="Tests in Edge">-->
+<!--    <parameter name="browser" value="chrome" />-->
+<!--    <classes>-->
+<!--        <class name="Tests"/>-->
+<!--    </classes>-->
+<!--</test>-->
+<!--</suite> &lt;!&ndash; Suite &ndash;&gt;-->
+

@@ -9,7 +9,7 @@ public class TasksTab {
 
 
     // Загрузка файла из локальной директории
-    File file = new File("C:\\Users\\sadouski\\IdeaProjects\\test_document1.txt");
+    File file = new File("C:\\Users\\sadouski\\Documents\\IdeaProjects\\test_document1.txt");
     private final SelenideElement selectFindTask = $x ("//td/a[contains(text(),'" + CreateTask.doc_id_auto + "')]"); //Выбор задачи
     private final SelenideElement selectFactorTask = $x ("//td/a[@class='link']");//выбор фактора в задаче
     private final SelenideElement cancelSelectFactorTask = $x ("//footer/button[@class='cancel']");//отмена выбора фактора

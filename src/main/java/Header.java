@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class Header {
 
-    private final SelenideElement filterTab = $x("//span[text()='Фильтры']");//перейти н авкладку фильтры
+    private final SelenideElement clickFilterTab = $x("//span[text()='Фильтры']");//перейти н авкладку фильтры
     private final SelenideElement riskProfileTab = $x("//span[text()='Риск-профили']");//перейти на вкладку риск профиль
     private final SelenideElement docTab = $x("//span[text()='Документы']");//перейти на вкладку документ
     private final SelenideElement varTab = $x("//span[text()='Переменные']");//перейти на вкладку переменные
@@ -12,8 +12,8 @@ public class Header {
     private final SelenideElement rullsTab = $x("//span[text()='Правила']");//перейти на вкладку правила
     private final SelenideElement taskTab = $x("//span[text()='Задачи']");//перейти на вкладку задачи
 
-    public Header clickFilter() {
-        filterTab.click();
+    public Header filterTab() {
+        clickFilterTab.click();
         return this;
     }
 
