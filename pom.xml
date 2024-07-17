@@ -15,6 +15,15 @@
 
     <dependencies>
 
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.22.0</version>
+        </dependency>
+
+
         <!-- rest assure -->
 
         <dependency>
@@ -22,6 +31,8 @@
             <artifactId>allure-rest-assured</artifactId>
             <version>2.13.0</version>
         </dependency>
+
+
 
         <!-- Selenide -->
         <dependency>
