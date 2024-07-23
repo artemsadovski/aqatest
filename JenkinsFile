@@ -20,18 +20,18 @@ pipeline {
                 sh "mvn ${env.MAVEN_GOALS}"
             }
         }
-
-        stage('Allure Report') {
-            steps {
-                allure([
-                    results: [[path: "${env.ALLURE_RESULTS_DIR}"]]
-                ])
-            }
-        }
     }
 
     post {
         always {
+            stage('Allure Report') {
+                    steps {
+                        allure([
+                            results: [[path: "${env.ALLURE_RESULTS_DIR}"]]
+                        ])
+                    }
+                }
+
             archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             junit '**/target/surefire-reports/*.xml'
         }
