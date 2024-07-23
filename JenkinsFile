@@ -24,14 +24,10 @@ pipeline {
 
     post {
         always {
-            stage('Allure Report') {
-                    steps {
-                        allure([
-                            results: [[path: "${env.ALLURE_RESULTS_DIR}"]]
-                        ])
-                    }
-                }
 
+            allure([
+                results: [[path: "${env.ALLURE_RESULTS_DIR}"]]
+            ])
             archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             junit '**/target/surefire-reports/*.xml'
 
