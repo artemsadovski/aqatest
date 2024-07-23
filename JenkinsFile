@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+
+    environment {
+        REPO_URL = 'https://github.com/artemsadovski/aqatest'
+        BRANCH = '*/main'
+        MAVEN_GOALS = 'clean test -DxmlFiles="blob/main/testng.xml"'
+        ALLURE_RESULTS_DIR = 'target/allure-results'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: "${env.BRANCH}", url: "${env.REPO_URL}"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh "mvn ${env.MAVEN_GOALS}"
+            }
+        }
+
+        stage('Allure Report') {
+            steps {
+                allure([
+                    results: [[path: "${env.ALLURE_RESULTS_DIR}"]]
+                ])
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+            junit '**/target/surefire-reports/*.xml'
+        }
+
+        failure {
+            mail to: 'artsiom.sadouski@softclub.by',
+                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Something is wrong with ${env.REPO_URL}, build ${env.BUILD_ID}"
+        }
+    }
+}

@@ -160,6 +160,8 @@ public class FiltersTab {
     }
 
 
+
+
     private void deleteProcess(String element) {
         if (element != null) {
             $x("//a[contains(text(), '" + element + "')]/../../td[7]/app-icon").click();

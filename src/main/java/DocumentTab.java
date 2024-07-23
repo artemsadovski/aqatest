@@ -3,6 +3,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.ex.ElementNotFound;
 import dev.failsafe.internal.util.Assert;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
@@ -77,7 +78,7 @@ public class DocumentTab {
     private final SelenideElement popApDelDoc = $x("//label[text()='Документ удален']"); //поп-ап удаления документа
     private final SelenideElement closePopApDel = $x("//div[@class='error']/following::div/app-icon[text()='close']"); //закрыть поп-ап удаления
 
-
+    @Step("Создание документа")
     public void createDocument(String id, String name, String filterName) {
         try {
             checkDocumentTabIsOpen();
@@ -96,14 +97,15 @@ public class DocumentTab {
                 selectFilterForDocument.click();
                 for (int i = 0; i < Consts.elements.size(); i++) {
                     Consts.elements.get(i);
+                    String dtr = Consts.elements.get(i);
                     WebElement element = searchForName(attributesNamesList, Consts.elements.get(i));
                     if (element != null) {
+                        String test = element.getText();
                         $x(String.format(btnAttributeAddDocument, element.getText())).click();
                     } else {
                         addAtr.simpleCreateAttributeProcess(Consts.elements.get(i), Consts.elements.get(i));
                         WebElement createdElement = searchForName(attributesNamesList, Consts.elements.get(i));
                         $x(String.format(btnAttributeAddDocument, createdElement.getText())).click();
-
                     }
                 }
                 btnAddDocument.click();
@@ -165,7 +167,6 @@ public class DocumentTab {
             if (element != null) {
                 $x(String.format(btnDescriotion, element.getText())).click();
                 for (int i = 0; i < Consts.elements.size(); i++) {
-                    Consts.elements.get(i);
                     WebElement element1 = searchForName(documentDescriptionListAtr, Consts.elements.get(i));
                     Assert.isTrue(element1 != null, "Атрибут " + Consts.elements.get(i) + " отсуствует");
                 }
@@ -175,7 +176,7 @@ public class DocumentTab {
             }
         }
     }
-
+    @Step("Создание документа")
     public boolean createDocument(String name) {
         checkDocumentTabIsOpen();
         btnAddDocument.click();
@@ -273,7 +274,7 @@ public class DocumentTab {
             return false;
         }
     }
-
+    @Step("Редактирование документа")
     public void editDocument(String name) {
         try {
             checkDocumentTabIsOpen();
@@ -344,7 +345,7 @@ public class DocumentTab {
             }
         }
     }
-
+    @Step("Удаление документа")
     public void deleteDocument(String name) {
         try {
             checkDocumentTabIsOpen();

@@ -32,7 +32,7 @@ public class Tests {
     public void loginTest() {
         Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = true;
-        Configuration.headless = true;
+        //Configuration.headless = true;
         //System.setProperty("chromeoptions.args", "--remote-allow-origins=*");
         logInForm
                 .login(Consts.name, Consts.pass);
@@ -71,6 +71,7 @@ public class Tests {
     @Story("Поиск по имени фильтра")
     @Description("Проверка поиска по имени фильтра")
     public void testFilter() {
+        filtersTab.createFilter(Consts.filterName, Consts.filterDescr, Consts.filterCond, Consts.filterTestValue); //?
         if (searchFilter.searchFilter()) {
             System.out.println("Поиск проверен");
         } else {
@@ -144,6 +145,9 @@ public class Tests {
     }
 
 //    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Создание документа")
+//    @Description("Проверка создания документа")
 //    public void createDocument() {
 //        documentTab
 //                .createDocument(Consts.documentId, Consts.documentName, Consts.filterName);

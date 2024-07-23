@@ -56,6 +56,11 @@ public class ScenarioTab {
             System.out.println("Вкладка сценарии не найдена (стоит не тот контур)");
             return;
         }
+        try { // Добавлено чтоб успела загрузиться отфильтрованная таблица
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement element2 = searchForName(scenarioNamesList, name);
         if (element2 != null) {
             deleteScenario(name);

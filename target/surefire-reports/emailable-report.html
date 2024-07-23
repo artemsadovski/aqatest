@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">TestSuite</th></tr>
+<tr><td><a href="#t0">Tests</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num">50 043</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="6">Tests</td><td><a href="#m0">testFilterCreate</a></td><td rowspan="1">1721251320271</td><td rowspan="1">5564</td></tr><tr class="failedeven"><td><a href="#m1">testFilterDelete</a></td><td rowspan="1">1721251325835</td><td rowspan="1">5264</td></tr><tr class="failedeven"><td><a href="#m2">testScenarioCreate</a></td><td rowspan="1">1721251332508</td><td rowspan="1">5590</td></tr><tr class="failedeven"><td><a href="#m3">testScenarioDelete</a></td><td rowspan="1">1721251338101</td><td rowspan="1">4992</td></tr><tr class="failedeven"><td><a href="#m4">testScenarioEdit</a></td><td rowspan="1">1721251343097</td><td rowspan="1">4982</td></tr><tr class="failedeven"><td><a href="#m5">testScenarioFilterScanario</a></td><td rowspan="1">1721251348084</td><td rowspan="1">1131</td></tr><tr><th colspan="4">Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">Tests</td><td><a href="#m6">testAttributesCreate</a></td><td rowspan="1">1721251299204</td><td rowspan="1">2158</td></tr><tr class="passedeven"><td><a href="#m7">testAttributesDelete</a></td><td rowspan="1">1721251301420</td><td rowspan="1">688</td></tr><tr class="passedeven"><td><a href="#m8">testAttributesEdit</a></td><td rowspan="1">1721251302110</td><td rowspan="1">1932</td></tr><tr class="passedeven"><td><a href="#m9">testFilter</a></td><td rowspan="1">1721251304044</td><td rowspan="1">16225</td></tr><tr class="passedeven"><td><a href="#m10">testFilterEdit</a></td><td rowspan="1">1721251331103</td><td rowspan="1">1399</td></tr></tbody>
+</table>
+<h2>Tests</h2><h3 id="m0">Tests#testFilterCreate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {By.xpath: //div/label[normalize-space(text())=&apos;Фильтр удален&apos;]}
+Expected: visible
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251325756.6.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251325756.6.html
+Timeout: 5 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Фильтр удален&apos;]&quot;}
+	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:90)
+	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:126)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:103)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:30)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:14)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.shouldBe(Unknown Source)
+	at FiltersTab.deleteProcess(FiltersTab.java:171)
+	at FiltersTab.deleteFilter(FiltersTab.java:121)
+	at FiltersTab.createFilter(FiltersTab.java:63)
+	at Tests.testFilterCreate(Tests.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Фильтр удален&apos;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, findElement {value=//div/label[normalize-space(text())=&apos;Фильтр удален&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:73)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:46)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:35)
+	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:122)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:115)
+	... 41 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Tests#testFilterDelete</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {By.xpath: //div/label[normalize-space(text())=&apos;Фильтр удален&apos;]}
+Expected: visible
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251330996.7.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251330996.7.html
+Timeout: 5 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Фильтр удален&apos;]&quot;}
+	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:90)
+	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:126)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:103)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:30)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:14)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.shouldBe(Unknown Source)
+	at FiltersTab.deleteProcess(FiltersTab.java:171)
+	at FiltersTab.deleteFilter(FiltersTab.java:121)
+	at Tests.testFilterDelete(Tests.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Фильтр удален&apos;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, findElement {value=//div/label[normalize-space(text())=&apos;Фильтр удален&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:73)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:46)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:35)
+	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:122)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:115)
+	... 40 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Tests#testScenarioCreate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {By.xpath: //div/label[normalize-space(text())=&apos;Сценарий добавлен&apos;]}
+Expected: visible
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251337977.8.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251337977.8.html
+Timeout: 5 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Сценарий добавлен&apos;]&quot;}
+	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:90)
+	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:142)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:126)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:103)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:30)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:14)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.shouldBe(Unknown Source)
+	at ScenarioTab.createScenario(ScenarioTab.java:78)
+	at Tests.testScenarioCreate(Tests.java:104)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/label[normalize-space(text())=&apos;Сценарий добавлен&apos;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, findElement {value=//div/label[normalize-space(text())=&apos;Сценарий добавлен&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:73)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:46)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:35)
+	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:122)
+	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:115)
+	... 39 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Tests#testScenarioDelete</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Invalid element state [By.xpath: //a[contains(text(), &apos;Scenario_test&apos;)]/../../td[9]/app-icon]: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251342979.9.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251342979.9.html
+Timeout: 4 s.
+Caused by: ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+	at com.codeborne.selenide.impl.ExceptionWrapper.wrap(ExceptionWrapper.java:26)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:156)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at ScenarioTab.deleteProcess(ScenarioTab.java:197)
+	at ScenarioTab.deleteScenario(ScenarioTab.java:124)
+	at Tests.testScenarioDelete(Tests.java:86)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+  (Session info: chrome=126.0.6478.127)
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, clickElement {id=f.3A25C01D05B6C24CB64B124D9C9629E2.d.1E76AA97917F8000B687AAF58BF89262.e.555}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9a05e69758f50e0d8dc0099250add30a)] -&gt; xpath: //a[contains(text(), &apos;Scenario_test&apos;)]/../../td[9]/app-icon]
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.codeborne.selenide.commands.Click.defaultClick(Click.java:106)
+	at com.codeborne.selenide.commands.Click.doClick(Click.java:83)
+	at com.codeborne.selenide.commands.Click.click(Click.java:59)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:34)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:26)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	... 35 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Tests#testScenarioEdit</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Invalid element state [By.xpath: //a[contains(text(), &apos;Scenario_test&apos;)]/../../td[9]/app-icon]: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251347964.10.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251347964.10.html
+Timeout: 4 s.
+Caused by: ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+	at com.codeborne.selenide.impl.ExceptionWrapper.wrap(ExceptionWrapper.java:26)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:156)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at ScenarioTab.editProcess(ScenarioTab.java:179)
+	at ScenarioTab.editScenario(ScenarioTab.java:163)
+	at Tests.testScenarioEdit(Tests.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c929870496=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (1308, 235). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+  (Session info: chrome=126.0.6478.127)
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, clickElement {id=f.3A25C01D05B6C24CB64B124D9C9629E2.d.1E76AA97917F8000B687AAF58BF89262.e.555}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9a05e69758f50e0d8dc0099250add30a)] -&gt; xpath: //a[contains(text(), &apos;Scenario_test&apos;)]/../../td[9]/app-icon]
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.codeborne.selenide.commands.Click.defaultClick(Click.java:106)
+	at com.codeborne.selenide.commands.Click.doClick(Click.java:83)
+	at com.codeborne.selenide.commands.Click.click(Click.java:59)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:34)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:26)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	... 35 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Tests#testScenarioFilterScanario</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Invalid element state [By.xpath: //div/app-text-box[contains(@placeholder, &apos;Поиск&apos;)]/following-sibling::app-icon[text()=&apos;help&apos;]]: element click intercepted: Element &lt;app-icon _ngcontent-ng-c2993090274=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (247, 136). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+Screenshot: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251349121.11.png
+Page source: file:/C:/Users/sadouski/Documents/IdeaProjects/AqaPhobos/build/reports/tests/1721251349121.11.html
+Timeout: 100 ms.
+Caused by: ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c2993090274=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (247, 136). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+	at com.codeborne.selenide.impl.ExceptionWrapper.wrap(ExceptionWrapper.java:26)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:156)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at SearchFilter.checkAvailableAttributes(SearchFilter.java:80)
+	at SearchFilter.numberOfColumn(SearchFilter.java:59)
+	at SearchFilter.searchFilter(SearchFilter.java:26)
+	at Tests.testScenarioFilterScanario(Tests.java:112)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;app-icon _ngcontent-ng-c2993090274=&quot;&quot; _nghost-ng-c3843224795=&quot;&quot;&gt;...&lt;/app-icon&gt; is not clickable at point (247, 136). Other element would receive the click: &lt;app-overlay _nghost-ng-c1671121884=&quot;&quot; class=&quot;center&quot;&gt;...&lt;/app-overlay&gt;
+  (Session info: chrome=126.0.6478.127)
+Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a05e69758f50e0d8dc0099250add30a, clickElement {id=f.3A25C01D05B6C24CB64B124D9C9629E2.d.1E76AA97917F8000B687AAF58BF89262.e.556}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\sadouski\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9a05e69758f50e0d8dc0099250add30a)] -&gt; xpath: //div/app-text-box[contains(@placeholder, &apos;Поиск&apos;)]/following-sibling::app-icon[text()=&apos;help&apos;]]
+Session ID: 9a05e69758f50e0d8dc0099250add30a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.codeborne.selenide.commands.Click.defaultClick(Click.java:106)
+	at com.codeborne.selenide.commands.Click.doClick(Click.java:83)
+	at com.codeborne.selenide.commands.Click.click(Click.java:59)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:34)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:26)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:162)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:134)
+	... 36 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Tests#testAttributesCreate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">Tests#testAttributesDelete</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">Tests#testAttributesEdit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">Tests#testFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">Tests#testFilterEdit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
