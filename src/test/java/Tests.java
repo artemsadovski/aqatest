@@ -32,7 +32,7 @@ public class Tests {
     public void loginTest() {
         Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = true;
-        //Configuration.headless = true;
+        Configuration.headless = true;
         //System.setProperty("chromeoptions.args", "--remote-allow-origins=*");
         logInForm
                 .login(Consts.name, Consts.pass);
