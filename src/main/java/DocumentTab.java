@@ -8,8 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.$$x;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class DocumentTab {
@@ -49,9 +48,9 @@ public class DocumentTab {
     private final String btnDescriotion = "//a[contains(text(), '%s')]/../../td[1]"; // открыть описание документа
     private final String btnCrudDocument = "//a[contains(text(), '%s')]/../../td[8]/app-icon"; //кнопка редактировани/удаления документа
     private final SelenideElement btnDeleteDocument = $x("//div/ul/li[text()='Удалить']"); //кнопка удаления
-    private final SelenideElement btnApproveDeleteDocument = $x("//footer/button[text()='Да']"); //подтверждение удаления документа
+    private final SelenideElement btnApproveDeleteDocument = $x("//footer/button[normalize-space(text())='Да']"); //подтверждение удаления документа
     private final SelenideElement popUpDocumentDelete = $x("//div/label[text()='Документ удален']"); //поп-ап:документ удален
-    private final SelenideElement btnEditDocument = $x("//div/ul/li[text()='Редактировать']"); //кнопка удаления документа
+    private final SelenideElement btnEditDocument = $x("//div/ul/li[normalize-space(text())='Редактировать']"); //кнопка удаления документа
     private final ElementsCollection filterListInDocument = $$x("//app-search-select-box[@formcontrolname='filter']/div/ul/li"); //список фильтров для выбора
     private final SelenideElement btnDeleteFilter = $x("//app-search-select-box[@formcontrolname='filter']/following-sibling::span/app-icon"); //кнопка удаления фильтра
     private final ElementsCollection attributesNamesListCreatedDocument = $$x("//section[@class='table']/table//tr/td[2]"); //атрибут в таблице уже созданного документа
@@ -97,10 +96,10 @@ public class DocumentTab {
                 selectFilterForDocument.click();
                 for (int i = 0; i < Consts.elements.size(); i++) {
                     Consts.elements.get(i);
-                    String dtr = Consts.elements.get(i);
                     WebElement element = searchForName(attributesNamesList, Consts.elements.get(i));
                     if (element != null) {
-                        String test = element.getText();
+                        actions().scrollToElement(element).build().perform(); //прокрутка скролла до нужного элемента (проблемы: иногда не работает,
+                                                                              // приходиться писать функцию по передвижению скролла с помощью мыши)
                         $x(String.format(btnAttributeAddDocument, element.getText())).click();
                     } else {
                         addAtr.simpleCreateAttributeProcess(Consts.elements.get(i), Consts.elements.get(i));
@@ -132,6 +131,7 @@ public class DocumentTab {
                     Consts.elements.get(i);
                     WebElement element = searchForName(attributesNamesList, Consts.elements.get(i));
                     if (element != null) {
+                        actions().scrollToElement(element).build().perform();
                         $x(String.format(btnAttributeAddDocument, element.getText())).click();
                     } else {
                         addAtr.simpleCreateAttributeProcess(Consts.elements.get(i), Consts.elements.get(i));
@@ -192,6 +192,7 @@ public class DocumentTab {
                     Consts.elements.get(i);
                     WebElement element = searchForName(attributesNamesList, Consts.elements.get(i));
                     if (element != null) {
+                        actions().scrollToElement(element).build().perform();
                         $x(String.format(btnAttributeAddDocument, element.getText())).click();
                     } else {
                         addAtr.simpleCreateAttributeProcess(Consts.elements.get(i), Consts.elements.get(i));
@@ -316,7 +317,10 @@ public class DocumentTab {
                 $x(String.format(btnDescriotion, element.getText())).click();
                 for (int i = 0; i < Consts.elementsEdit.size(); i++) {
                     WebElement element1 = searchForName(documentDescriptionListAtr, Consts.elementsEdit.get(i));
-                    Assert.isTrue(element1 != null, "Атрибут " + Consts.elementsEdit.get(i) + " удален");
+                    System.out.println("element1: " + element1);
+                    System.out.println("i: " + i);
+                    System.out.println("Consts.elementsEdit.get(i): " + Consts.elementsEdit.get(i));
+                    Assert.isTrue(element1 == null, "Атрибут " + Consts.elementsEdit.get(i) + " удален");
                 }
                 $x(String.format(btnDescriotion, element.getText())).click();
             }

@@ -11,7 +11,10 @@ public class Consts {
     //public static final String baseUIUrl = "https://public.softclub.by:7791/auth/realms/SCRealm/protocol/openid-connect/auth?client_id=SC-CCS_UI&redirect_uri=https%3A%2F%2F192.168.246.84%3A4443%2Fru%2Ffilters&state=41d78fb2-d420-4fe0-88b8-2989669a2d8e&response_mode=fragment&response_type=code&scope=openid&nonce=051f2aec-dc97-43f9-99ee-7bcd41d4c28b";
 
     //int
-    public static final String baseUIUrl = "https://keycloak-dev-integration.softclub.by:7781/auth/realms/SCRealm/protocol/openid-connect/auth?client_id=SC-CCS_UI&redirect_uri=https%3A%2F%2Fccs-dev-integration.softclub.by%2Fru%2Fdocuments&state=709f6651-13c0-4376-9a48-dfe01fe10291&response_mode=fragment&response_type=code&scope=openid&nonce=d99ce069-1469-49c2-8b82-5de326c927bd";
+    //public static final String baseUIUrl = "https://keycloak-dev-integration.softclub.by:7781/auth/realms/SCRealm/protocol/openid-connect/auth?client_id=SC-CCS_UI&redirect_uri=https%3A%2F%2Fccs-dev-integration.softclub.by%2Fru%2Fdocuments&state=709f6651-13c0-4376-9a48-dfe01fe10291&response_mode=fragment&response_type=code&scope=openid&nonce=d99ce069-1469-49c2-8b82-5de326c927bd";
+
+    //test-phobos
+    public static final String baseUIUrl = "https://keycloak-phobos-test.softclub.by:7891/auth/realms/SCRealm/protocol/openid-connect/auth?client_id=SC-CCS_UI&redirect_uri=https%3A%2F%2Fphobos-test.softclub.by%2Fru%2Fproject-settings%2Fmanage-access&state=4b6d2130-bcf7-4360-854d-8a8849378fe9&response_mode=fragment&response_type=code&scope=openid&nonce=9444e202-361d-4bcf-b6b8-4217ff755f23";
 
     //url для session_bynex
     //public static final String baseUIUrl = "https://keycloak-dev-bynex.softclub.by:7781/auth/realms/SCRealm/protocol/openid-connect/auth?client_id=SC-CCS_UI&redirect_uri=https%3A%2F%2Fccs-dev-bynex.softclub.by%2Fru%2Faggregates&state=d7ae75cc-808b-42fb-8119-be5896c7f7c2&response_mode=fragment&response_type=code&scope=openid&nonce=82075440-cdc1-4fb4-81ab-94fe89ffdcc3";

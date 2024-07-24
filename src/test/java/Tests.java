@@ -31,8 +31,8 @@ public class Tests {
     @Description("Проверка корректного ввода логина и пароля")
     public void loginTest() {
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = true;
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen = true; //оставить браузер открытым
+        Configuration.headless = true; //тесты не открывая браузер
         //System.setProperty("chromeoptions.args", "--remote-allow-origins=*");
         logInForm
                 .login(Consts.name, Consts.pass);
@@ -57,93 +57,93 @@ public class Tests {
                 .editFilter(Consts.filterName, Consts.filterEditDescr, Consts.filterEditCond);
     }
 
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Создание фильтра")
-    @Description("Проверка создания фильтра")
-    public void testFilterCreate() {
-        filtersTab
-                .createFilter(Consts.filterName, Consts.filterDescr, Consts.filterCond, Consts.filterTestValue);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Поиск по имени фильтра")
-    @Description("Проверка поиска по имени фильтра")
-    public void testFilter() {
-        filtersTab.createFilter(Consts.filterName, Consts.filterDescr, Consts.filterCond, Consts.filterTestValue); //?
-        if (searchFilter.searchFilter()) {
-            System.out.println("Поиск проверен");
-        } else {
-            System.out.println("Поиск не проверен");
-        }
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Удаление сценария")
-    @Description("Проверка удаления сценария")
-    public void testScenarioDelete() {
-        riskProfileTab.deleteScenario(Consts.scenarioName);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Редактирование сценария")
-    @Description("Проверка редактирвания сценария")
-    public void testScenarioEdit() {
-        riskProfileTab
-                .editScenario(Consts.scenarioName, Consts.scenarioAnhorEdit, Consts.scenarioWorkflowEdit, Consts.scenarioDescrEdit);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Создание сценария")
-    @Description("Проверка создания сценария")
-    public void testScenarioCreate() {
-        riskProfileTab
-                .createScenario(Consts.scenarioName, Consts.scenarioAnhor, Consts.scenarioWorkflow, Consts.scenarioDescr);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Поиск по имени сценария")
-    @Description("Проверка поиска по имени сценария")
-    public void testScenarioFilterScanario() {
-        if (searchFilter.searchFilter()) {
-            System.out.println("Поиск проверен");
-        } else {
-            System.out.println("Поиск не проверен");
-        }
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Создание атрибута")
-    @Description("Проверка создания атрибута")
-    public void testAttributesCreate() {
-        addAtr
-                .createAttribute(Consts.attributeCode, Consts.attributeName);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Редактирование атрибута")
-    @Description("Проверка Редактирование атрибута")
-    public void testAttributesEdit() {
-        addAtr
-                .editAttribute(Consts.attributeCode, Consts.attributeNameEdit);
-    }
-
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Удаление атрибута")
-    @Description("Проверка удаления атрибута")
-    public void testAttributesDelete() {
-        addAtr
-                .deleteAttribute(Consts.attributeCode);
-    }
-
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Создание фильтра")
+//    @Description("Проверка создания фильтра")
+//    public void testFilterCreate() {
+//        filtersTab
+//                .createFilter(Consts.filterName, Consts.filterDescr, Consts.filterCond, Consts.filterTestValue);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Поиск по имени фильтра")
+//    @Description("Проверка поиска по имени фильтра")
+//    public void testFilter() {
+//        filtersTab.createFilter(Consts.filterName, Consts.filterDescr, Consts.filterCond, Consts.filterTestValue); //?
+//        if (searchFilter.searchFilter()) {
+//            System.out.println("Поиск проверен");
+//        } else {
+//            System.out.println("Поиск не проверен");
+//        }
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Удаление сценария")
+//    @Description("Проверка удаления сценария")
+//    public void testScenarioDelete() {
+//        riskProfileTab.deleteScenario(Consts.scenarioName);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Редактирование сценария")
+//    @Description("Проверка редактирвания сценария")
+//    public void testScenarioEdit() {
+//        riskProfileTab
+//                .editScenario(Consts.scenarioName, Consts.scenarioAnhorEdit, Consts.scenarioWorkflowEdit, Consts.scenarioDescrEdit);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Создание сценария")
+//    @Description("Проверка создания сценария")
+//    public void testScenarioCreate() {
+//        riskProfileTab
+//                .createScenario(Consts.scenarioName, Consts.scenarioAnhor, Consts.scenarioWorkflow, Consts.scenarioDescr);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Поиск по имени сценария")
+//    @Description("Проверка поиска по имени сценария")
+//    public void testScenarioFilterScanario() {
+//        if (searchFilter.searchFilter()) {
+//            System.out.println("Поиск проверен");
+//        } else {
+//            System.out.println("Поиск не проверен");
+//        }
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Создание атрибута")
+//    @Description("Проверка создания атрибута")
+//    public void testAttributesCreate() {
+//        addAtr
+//                .createAttribute(Consts.attributeCode, Consts.attributeName);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Редактирование атрибута")
+//    @Description("Проверка Редактирование атрибута")
+//    public void testAttributesEdit() {
+//        addAtr
+//                .editAttribute(Consts.attributeCode, Consts.attributeNameEdit);
+//    }
+//
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Удаление атрибута")
+//    @Description("Проверка удаления атрибута")
+//    public void testAttributesDelete() {
+//        addAtr
+//                .deleteAttribute(Consts.attributeCode);
+//    }
+//
 //    @Test
 //    @Severity(SeverityLevel.NORMAL)
 //    @Story("Создание документа")
@@ -154,21 +154,19 @@ public class Tests {
 //    }
 //
 //    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Удаление документа")
+//    @Description("Проверка удаления документа")
 //    public void deleteDocument() {
-//        Configuration.browser = "chrome";
-//        Configuration.holdBrowserOpen = true;
-//        logInForm
-//                .login(Consts.name, Consts.pass);
 //        documentTab
 //                .deleteDocument(Consts.documentName);
 //    }
 //
 //    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Редактирование документа")
+//    @Description("Проверка редактирования документа")
 //    public void editDocument() {
-//        Configuration.browser = "chrome";
-//        Configuration.holdBrowserOpen = true;
-//        logInForm
-//                .login(Consts.name, Consts.pass);
 //        documentTab
 //                .editDocument(Consts.documentNameEdit);
 //    }

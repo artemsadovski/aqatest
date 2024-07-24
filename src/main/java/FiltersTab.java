@@ -46,7 +46,7 @@ public class FiltersTab {
     private final SelenideElement popUpFilterDelete = $x("//div/label[normalize-space(text())='Фильтр удален']"); //поп-ап удаления фильтра
     private final SelenideElement headCheckFilter = $x("//h2[normalize-space(text())='Фильтры']"); // проверка заголовка
     private final SelenideElement fieldSearchFilter = $x("//app-text-box/input[@placeholder='Поиск']"); // поле поиска
-    private final SelenideElement popUpFilterEditApprove = $x("//app-confirmation-popup"); // сообение о редактировании фильтра
+    private final SelenideElement popUpFilterEditApprove = $x("//app-confirmation-popup"); // сообщение о редактировании фильтра
     private final SelenideElement popUpFilterEdit = $x("//div/label[normalize-space(text())='Фильтр обновлен']"); // поп-ап сообщение об обновлении фильтра
 
 
